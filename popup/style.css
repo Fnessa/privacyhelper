@@ -1,0 +1,9 @@
+body{
+    width: 512px;
+}
+header{
+    display: inline-flex;
+}
+main{
+    font-size: 1.5em;
+}

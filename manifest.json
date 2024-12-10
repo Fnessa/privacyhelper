@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Privacy helper",
+    "version": "1.0",
+  
+    "description": "Prototype of an extension that gives you an overview over the privacy policy of the website you're using.",
+  
+    "icons": {
+      "48": "icons/privacy-48.png"
+    },
+  
+    "permissions": ["tabs", "webNavigation"],
+    
+  "action": {
+    "default_icon": "icons/privacy-48.png",
+    "default_title": "Privacy helper",
+    "default_popup": "popup/privacyhelper.html"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+    "content_scripts": [
+      {
+        "matches": ["*://*.mozilla.org/*"],
+        "js": ["privacy.js"]
+      }
+    ]
+  }
