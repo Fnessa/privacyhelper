@@ -2,7 +2,6 @@
 function getActiveTabUrl(details) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const activeTabUrl = tabs[0].url;
-    console.log(activeTabUrl);
   });
 }
 
