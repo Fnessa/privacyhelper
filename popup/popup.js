@@ -1,18 +1,15 @@
 let data
-document.addEventListener('DOMContentLoaded', onDOMContentLoaded); //adds event listener that connects onDOMContentLoaded() to the event DOMContentLoaded
+document.addEventListener('DOMContentLoaded', changeContent); //adds event listener that connects changeContent() to the event DOMContentLoaded
 
-function onDOMContentLoaded(){ 
-   changeContent();
-}
-
+// changes the content of the popup depending on the website the user is on.
 function changeContent(){
-    console.log("AAA");
     //Getting currently active tabs.
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         let activeTabUrl = tabs[0].url;  //Setting activeTabUrl to the url of the current tab
-        let cleanURL = new URL(activeTabUrl)
-        document.getElementById("url").innerHTML = cleanURL.hostname //setting the innerHTML of the element with url id to the activeTabUrl
+        let cleanURL = new URL(activeTabUrl) //creating a URL object out of activeTabUrl
+        document.getElementById("url").innerHTML = cleanURL.hostname //setting the innerHTML of the element with the url id to the hostname of the current website.
         
+        // this block changes the text based on the different url hostnames.
         if (cleanURL.hostname.includes("google.com")){
             document.getElementById("data").innerHTML = "❌ Blandt andet gemmer Google søgehistorik, IP-adresse, enhedsegenskaber, købshistorik, aktivitet på trejdspartswebsites der andvender google tjenester, og muligvis enhedens sensordata."
             document.getElementById("time").innerHTML = "❌ Data opbevares i ubegrænset eller uspecificeret længde."

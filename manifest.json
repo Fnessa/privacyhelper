@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Privacy helper",
+  "name": "Transparens skabende browserudvidelse",
   "version": "1.0",
-  "description": "Prototype of an extension that gives you an overview over the privacy policy of the website you're using.",
+  "description": "Prototype af en browserudvidelse som giver brugeren et overblik over de vigtigste punkter i en hjemmesides privatlivspolitik.",
   "icons": {
     "48": "icons/privacy-48.png"
   },
@@ -10,21 +10,14 @@
   "permissions": ["tabs", "webNavigation"],
     
   "action": {
-    "default_icon": "icons/privacy-48.png",
-    "default_title": "Privacy helper",
+    "default_icon": "icons/neutral-48.png",
+    "default_title": "Transparens skabende browserudvidelse",
     "default_popup": "popup/privacyhelper.html"
   },
   
   "background": {
     "service_worker": "background.js"
   },
-
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["privacy.js"]
-    }
-  ],
   
   "web_accessible_resources": [{
     "resources" : ["popup/data/*.json"],
