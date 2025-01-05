@@ -20,6 +20,11 @@ function changeContent(){
             document.getElementById("time").innerHTML = "✅ Ingen IP eller unikke identifikatorer opbevares af DuckDuckGo"
             document.getElementById("icon").src = "img/GRØN LOGO.png"
         }
+        else if (cleanURL.hostname.includes("bing.com")){
+            document.getElementById("data").innerHTML = "✅ Noget positivt"
+            document.getElementById("time").innerHTML = "❕ Noget neutralt"
+            document.getElementById("icon").src = "img/GUL LOGO.png"
+        }
         else{
             document.getElementById("data").innerHTML = "Denne hjemmeside er ikke blevet evalueret."
             document.getElementById("time").innerHTML = ""

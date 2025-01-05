@@ -11,8 +11,11 @@ function getActiveTabUrl(details) {
     else if (url.hostname.includes("duckduckgo.com")){
       chrome.action.setIcon({ path: "icons/privacy-48.png" });
     }
-    else{
+    else if (url.hostname.includes("bing.com")){
       chrome.action.setIcon({ path: "icons/neutral-48.png" });
+    }
+    else{
+      chrome.action.setIcon({ path: "icons/nothing-48.png" });
     }
   });
 }
