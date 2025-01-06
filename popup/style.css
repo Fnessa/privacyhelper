@@ -18,3 +18,19 @@ footer{
 #icon{
     padding: 15px;
 }
+.title{
+    display: inline;
+    margin-inline: 0;
+    padding-inline: 0;
+    font-size: 3.5em;
+    font-family: serif;
+
+    text-shadow: 1px 1px black; 
+}
+.header{
+    padding-top: 1.5em;
+
+}
+#T{
+    font-size: 4.5em;
+}

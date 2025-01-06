@@ -14,21 +14,28 @@ function changeContent(){
             document.getElementById("data").innerHTML = "❌ Blandt andet gemmer Google søgehistorik, IP-adresse, enhedsegenskaber, købshistorik, aktivitet på trejdspartswebsites der andvender google tjenester, og muligvis enhedens sensordata."
             document.getElementById("time").innerHTML = "❌ Data opbevares i ubegrænset eller uspecificeret længde."
             document.getElementById("icon").src = "img/RØD LOGO.png"
+            document.getElementById("T").style.color = "red"
         }
         else if (cleanURL.hostname.includes("duckduckgo.com")){
             document.getElementById("data").innerHTML = "❕ Ip adresse, browser type, sprog, skærmstørrelse, operativsystem og browser præferencer bruges kortvarig."
             document.getElementById("time").innerHTML = "✅ Ingen IP eller unikke identifikatorer opbevares af DuckDuckGo"
             document.getElementById("icon").src = "img/GRØN LOGO.png"
+            document.getElementById("T").style.color = "green"
+
         }
         else if (cleanURL.hostname.includes("bing.com")){
             document.getElementById("data").innerHTML = "✅ Noget positivt"
-            document.getElementById("time").innerHTML = "❕ Noget neutralt"
+            document.getElementById("time").innerHTML = "❌ Noget negativt"
             document.getElementById("icon").src = "img/GUL LOGO.png"
+            document.getElementById("T").style.color = "gold"
+
         }
         else{
             document.getElementById("data").innerHTML = "Denne hjemmeside er ikke blevet evalueret."
             document.getElementById("time").innerHTML = ""
             document.getElementById("icon").src = "img/GRÅ LOGO.png"
+            document.getElementById("T").style.color = "gray"
+
         }
     })
 }
